@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
         
          String userRegistered = registerDao.registerUser(registerBean);
          
-         if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
+         if(userRegistered.equals("SUCCESS"))   
          {
             request.getRequestDispatcher("/Home.jsp").forward(request, response);
          }
