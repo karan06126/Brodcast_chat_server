@@ -14,7 +14,7 @@ public class RegisterServlet extends HttpServlet {
      }
  
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //Copying all the input parameters in to local variables
+       
          String fullName = request.getParameter("fullname");
          String email = request.getParameter("email");
          String userName = request.getParameter("username");
