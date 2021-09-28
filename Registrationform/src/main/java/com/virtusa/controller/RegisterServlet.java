@@ -21,7 +21,7 @@ public class RegisterServlet extends HttpServlet {
          String password = request.getParameter("password");
          
          RegisterBean registerBean = new RegisterBean();
-        //Using Java Beans - An easiest way to play with group of related data
+        
          registerBean.setFullName(fullName);
          registerBean.setEmail(email);
          registerBean.setUserName(userName);
@@ -29,14 +29,14 @@ public class RegisterServlet extends HttpServlet {
          
          RegisterDao registerDao = new RegisterDao();
          
-        //The core Logic of the Registration application is present here. We are going to insert user data in to the database.
+        
          String userRegistered = registerDao.registerUser(registerBean);
          
          if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
          {
             request.getRequestDispatcher("/Home.jsp").forward(request, response);
          }
-         else   //On Failure, display a meaningful message to the User.
+         else   
          {
             request.setAttribute("errMessage", userRegistered);
             request.getRequestDispatcher("/Register.jsp").forward(request, response);
