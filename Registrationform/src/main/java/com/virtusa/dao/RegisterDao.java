@@ -20,7 +20,7 @@ public class RegisterDao {
          {
              con = DBConnection.createConnection();
              String query = "insert into users(SlNo,fullName,Email,userName,password) values (NULL,?,?,?,?)"; //Insert user details into the table 'USERS'
-             preparedStatement = con.prepareStatement(query); //Making use of prepared statements here to insert bunch of data
+             preparedStatement = con.prepareStatement(query); 
              preparedStatement.setString(1, fullName);
              preparedStatement.setString(2, email);
              preparedStatement.setString(3, userName);
@@ -28,13 +28,13 @@ public class RegisterDao {
              
              int i= preparedStatement.executeUpdate();
              
-             if (i!=0)  //Just to ensure data has been inserted into the database
+             if (i!=0)  
              return "SUCCESS"; 
          }
          catch(SQLException e)
          {
             e.printStackTrace();
          }       
-         return "Oops.. Something went wrong there..!";  // On failure, send a message from here.
+         return "Oops.. Something went wrong there..!";  
      }
 }
