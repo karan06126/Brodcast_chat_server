@@ -9,7 +9,7 @@ public class DBConnection {
      Connection con = null;
      String url = "jdbc:mysql://localhost:3306/classicmodels"; 
      String username = "root"; 
-     String password = "Devil@0173637"; 
+     String password = ""; 
      System.out.println("In DBConnection.java class ");
       
      try
